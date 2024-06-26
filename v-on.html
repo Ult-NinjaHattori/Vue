@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>v-on イベントリスナー</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+        <script src="https://unpkg.com/vue@3.4.27/dist/vue.global.js"></script>
+		<style>
+
+		</style>
+    </head>
+    <body>
+        <h1 class="bg-secondary text-white display-4 px-3" >v-on</h1>
+        <div id="app">
+        	<button @click="onClick">押せよ</button>
+			<p>{{ now }}</p>
+        </div>
+
+        <script>
+		/*        data: () => ({
+          now: '-'
+        }),　
+		こちらはアロー関数を用いるパターン*/
+        const appdata = {
+        	data() {
+            	return {
+					now: "-"
+				}
+			},
+				methods: {
+            		onClick: function() {
+                		this.now = new Date().toLocaleString('ja-JP');
+            		}
+        		}
+      	}
+        Vue.createApp(appdata).mount('#app')
+		/*通常関数では特に記述の仕方でthisの振る舞いに差が生じる
+			アロー関数の場合には機能が絞られているからそれが起こらない。
+			thisの振る舞いに差が生じる理由として、
+				通常関数ではnew演算子を付加してコンストラクタを実行できるが、
+				アロー演算子はそれを限定的にすることで用途が絞られているから、
+					コーディングがシンプルに*/
+        </script>
+    </body>
+      
+
+</html>
