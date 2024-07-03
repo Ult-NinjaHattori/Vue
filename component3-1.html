@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>HTMLで値を記述するパターン</title>
+	</head>
+	<body> 
+		<div id="blog-post-demo"><!--ここのtitleに書かれたのが表示される-->
+			<blog-post title="そこが見える世界はつまらない"></blog-post>
+			<blog-post title="とらわれてるやつらに向けて"></blog-post>
+			<blog-post title="くるってる時間明日は来ない"></blog-post>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@3.4.27/dist/vue.global.js"></script>
+		<script>
+			const app = Vue.createApp({
+			components: {
+				'blog-post': {
+				props: ['title'],
+				template: `<h4>{{ title }}</h4>`
+				}
+			}
+			});
+
+			app.mount('#blog-post-demo');
+		</script>
+	</body>
+</html>
