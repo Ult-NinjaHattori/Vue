@@ -2,19 +2,25 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>My first Vue app</title>
+        <title>TEList</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
         <script src="https://unpkg.com/vue@3.4.27/dist/vue.global.js"></script>    
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    </head>
+		<style>
+			h1{
+				text-align: center;
+				color:lightyellow;
+			}
+		</style>
+	</head>
     <body>
-        <h1 class="bg-secondary text-white display-4 px-3">Vue3</h1>
+        <h1 class="bg-info display-4 px-3">Can you solve them !?</h1>
         <div id="app" class="container">
           <p>{{ message }}</p>
           <table class="table">
             <thead class="thead-dark">
               <tr>
-                <th>Name</th>
+                <th>NickName</th>
                 <th>mail</th>
                 <th>tel</th>
               </tr>
